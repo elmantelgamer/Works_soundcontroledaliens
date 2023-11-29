@@ -1,6 +1,6 @@
 function start(){
     navigator.mediaDevices.getUserMedia({audio:true});
-    classifier=ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/sfuw5h_fS/model.json',modelReady);
+    classifier=ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/lvRbnK1l5/model.json',modelReady);
 }
 function modelReady(){
     classifier.classify(gotResults);
@@ -25,7 +25,7 @@ function gotResults(error,results){
         img3=document.getElementById("alien3");
         img4=document.getElementById("alien4");
         
-        if(results[0].label=="clappy"){
+        if(results[0].label=="clapping"){
             img1.src='aliens-01.gif';
             img2.src='aliens-02.png';
             img3.src='aliens-03.png';
@@ -35,7 +35,7 @@ function gotResults(error,results){
             img2.src='aliens-02.gif';
             img3.src='aliens-03.png';
             img4.src='aliens-04.png';
-        }else if(results[0].label=="snaping"){
+        }else if(results[0].label=="snapping"){
             img1.src='aliens-01.png';
             img2.src='aliens-02.png';
             img3.src='aliens-03.gif';
